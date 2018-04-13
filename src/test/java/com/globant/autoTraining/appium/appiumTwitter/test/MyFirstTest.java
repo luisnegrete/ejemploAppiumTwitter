@@ -6,11 +6,12 @@ import org.testng.annotations.Test;
 
 import com.globant.autoTraining.appium.appiumTwitter.activities.LegalActivity;
 import com.globant.autoTraining.appium.appiumTwitter.activities.StartActivity;
+import com.globant.autoTraining.appium.appiumTwitter.activities.TweetActivity;
 import com.globant.autoTraining.appium.appiumTwitter.activities.ViewPagerActivity;
 
 public class MyFirstTest extends BaseTest {
 
-    @Test(description = "Display legal notices PASSED")
+    //@Test(description = "Display legal notices PASSED")
     public void displayLegalNoticesPASSTest() throws InterruptedException {
         StartActivity startActivity = new StartActivity(driver);
         LegalActivity legalActivity = startActivity
@@ -25,19 +26,23 @@ public class MyFirstTest extends BaseTest {
 	public Object[][] createData1() {
 		return new Object[][] { 
 				{ "Mensaje de prueba 1 con appium"},
-				{ "Mensaje de prueba 2 con appium"},
 				};
 	}
 
     
-   // @Test(description = "Display legal notices PASSED", dataProvider="providerTestTwittSomething")
+    @Test(description = "Display legal notices PASSED", dataProvider="providerTestTwittSomething")
     public void testTwittSomething(String message) throws InterruptedException {
         StartActivity startActivity = new StartActivity(driver);
-        ViewPagerActivity viewPagerActivity = startActivity
+        
+        startActivity
                 .clickLogin()
-                .fillData(" ", "")
+                .fillData("elzague", "newg3h31m")
                 .clickLogin()
-                .writeTweet(message);
+                .acceptPopWindows()
+                .selectATweet(0)
+                .selectReplyTweet()
+                .replyTweet("Respuesta automática By elZague")
+                ;
         Assert.assertTrue(true);
     }
 

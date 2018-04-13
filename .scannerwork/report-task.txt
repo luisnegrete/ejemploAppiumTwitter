@@ -1,0 +1,6 @@
+projectKey=appiumTwitter:project
+serverUrl=http://127.0.0.1:9000
+serverVersion=7.0.0.36138
+dashboardUrl=http://127.0.0.1:9000/dashboard/index/appiumTwitter:project
+ceTaskId=AWLAEd_nduv8I1vh1g_K
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AWLAEd_nduv8I1vh1g_K
